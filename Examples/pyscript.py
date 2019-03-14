@@ -15,11 +15,13 @@ import matplotlib.pyplot as plt # matplotlib é uma biblioteca de python para pr
 import numpy as np
 from matplotlib import colors
 
+figsize = (12,8)
+
 def main(arguments):
     
-    
     # Nome do arquivo de entrada
-    input_file = '/Users/helenamalbouisson/cernbox/Work/UERJ/Aulas/PYTHON/FisicaGeral_2017-2_2018-1/PythonLecture/Examples/dados_alunos.txt'
+    #input_file = '/Users/helenamalbouisson/cernbox/Work/UERJ/Aulas/PYTHON/FisicaGeral_2017-2_2018-1/PythonLecture/Examples/dados_alunos.txt'
+    input_file = '../Examples/dados_alunos.txt'
     
     # Abre o arquivo de entrada no modo de leitura
     ifile = open(input_file, 'r')
@@ -43,7 +45,7 @@ def main(arguments):
     print ('media massa = ', media(massa), '   mean(massa): ', statistics.mean(massa), '\n')
 
     # histogramas
-    fig, axs = plt.subplots(1, 3) # cria uma figura com três histogramas
+    fig, axs = plt.subplots( 1, 3, figsize=figsize ) # cria uma figura com três histogramas
     
     # define a classe de frequência, título dos eixos e do histograma na posição 0
     axs[0].hist(idade, bins=30, range=(16,46), color='red')
@@ -68,6 +70,8 @@ def main(arguments):
     #plot_hist(idade, 30, (16,46), 'red')
     #plot_hist(altura, 40, (1.6,2.0), 'green')
     #plot_hist(massa, 80, (40, 120), 'grey')
+
+    return 0
 
 def media(input_list):
     # essa funcao calcula a media dos itens da lista input_list
@@ -102,7 +106,7 @@ def plot_hist(input_list, n_bins, hist_range, cor):
     # plotly, rootpy.
 
     fig, ax = plt.subplots()
-    ax.hist(input_list, bins=n_bins, range=hist_range, color=cor)
+    ax.hist( input_list, bins=n_bins, range=hist_range, color=cor )
     plt.show()
 
     ##n_bins = [16 + i for i in range(30)]
@@ -111,9 +115,6 @@ def plot_hist(input_list, n_bins, hist_range, cor):
     ##plt.show()
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv[1:]))
+    sys.exit( main( sys.argv[1:] ) )
 
 
-
-
-    
