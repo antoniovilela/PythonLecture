@@ -36,14 +36,22 @@ def main(arguments):
         idade.append(eval(columns[0]))
         altura.append(eval(columns[1]))
         massa.append(eval(columns[2]))
-    
+
     # calcula a média de cada uma das colunas do arquivo de entrada:
     # idade, altura e massa:
-    print ('media idade = ', media(idade), '   mean(idade): ', statistics.mean(idade), '\n')
-    print ('desvio padrao idade: ', sstddev(idade), '  stats.stdev(idade): ', statistics.stdev(idade), '  statistics.pstdev(idade): ', statistics.pstdev(idade), '\n')
-    print ('media altura = ', media(altura), '   mean(altura): ', statistics.mean(altura), '\n')
-    print ('media massa = ', media(massa), '   mean(massa): ', statistics.mean(massa), '\n')
-
+    print ( 'média idade (1) = ', media(idade) ) 
+    print ( 'média idade (2) = ', statistics.mean(idade), '\n')
+  
+    print ( 'desvio padrão idade (1) = ', sstddev(idade) ) 
+    print ( 'desvio padrão idade (2) = ', statistics.stdev(idade) ) 
+    print ( 'desvio padrão idade (3) = ', statistics.pstdev(idade), '\n')
+    
+    print ( 'média altura (1) = ', media(altura) ) 
+    print ( 'média altura (2) = ', statistics.mean(altura), '\n')
+    
+    print ( 'média massa (1) = ', media(massa) ) 
+    print ( 'média massa (2) = ', statistics.mean(massa), '\n')
+    
     # histogramas
     fig, axs = plt.subplots( 1, 3, figsize=figsize ) # cria uma figura com três histogramas
     
@@ -108,11 +116,6 @@ def plot_hist(input_list, n_bins, hist_range, cor):
     fig, ax = plt.subplots()
     ax.hist( input_list, bins=n_bins, range=hist_range, color=cor )
     plt.show()
-
-    ##n_bins = [16 + i for i in range(30)]
-    ##fig, ax = plt.subplots()
-    ##ax.hist(idade, bins=n_bins, color='red')
-    ##plt.show()
 
 if __name__ == '__main__':
     sys.exit( main( sys.argv[1:] ) )
