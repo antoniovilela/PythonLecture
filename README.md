@@ -4,4 +4,6 @@
 
 - Abra um terminal
 
-git clone
+git clone https://github.com/antoniovilela/PythonLecture.git
+cd PythonLecture
+jupyter-notebook
