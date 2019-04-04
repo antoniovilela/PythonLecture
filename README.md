@@ -1,10 +1,12 @@
 # Introdução a Python
 
-- Crie uma pasta (por exemplo "Aula-FG")
+Crie uma pasta (por exemplo "Aula-FG")
 
-- Abra um terminal
+Abra um terminal
 
-- Digite: 
+Digite: 
+
+cd Aula-FG (ou nome do diretório)
 
 git clone https://github.com/antoniovilela/PythonLecture.git
 
